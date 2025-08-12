@@ -1,11 +1,10 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000', // Your backend URL here
-  headers: {
-    'Content-Type': 'application/json',
-  },
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000',
+  headers: { 'Content-Type': 'application/json' },
 });
+
 
 // Add Authorization header with Bearer token for every request if token exists
 api.interceptors.request.use(config => {
