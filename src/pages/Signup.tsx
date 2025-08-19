@@ -57,7 +57,11 @@ export default function Signup() {
 
   async function onSubmit(data: SignupFormData) {
     try {
-      await axios.post("http://localhost:5000/auth/signup", data);
+      await axios.post(
+     `${import.meta.env.VITE_API_BASE_URL || "http://localhost:5000"}/auth/signup`,
+
+        data
+      );
       alert("Signup successful! Please login.");
       form.reset();
     } catch (error: any) {

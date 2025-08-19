@@ -33,28 +33,32 @@ export default function Login() {
       password: "",
     },
   });
+// Login.tsx
+
 async function onSubmit(data: LoginFormData) {
   try {
-    const response = await axios.post("http://localhost:5000/auth/login", data);
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+
+    const response = await axios.post(`${API_BASE_URL}/auth/login`, data);
 
     localStorage.setItem("token", response.data.token);
-    localStorage.setItem("role", response.data.user.role);  // Save role too!
+    localStorage.setItem("role", response.data.user.role);
 
     alert("Login successful!");
 
-    // Redirect based on role:
-    if(response.data.role === 'admin') {
-      window.location.href = '/admin/dashboard';
-    } else if(response.data.role === 'owner') {
-      window.location.href = '/owner/dashboard';
+    if (response.data.role === "admin") {
+      window.location.href = "/admin/dashboard";
+    } else if (response.data.role === "owner") {
+      window.location.href = "/owner/dashboard";
     } else {
-      window.location.href = '/user/dashboard';
+      window.location.href = "/user/dashboard";
     }
 
   } catch (error: any) {
     alert(error.response?.data?.message || "Login failed");
   }
 }
+
 
  
   return (
