@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import {
   Button,
@@ -27,10 +28,12 @@ import {
   SelectItem,
 } from "@/components/ui/select";
 
-import { ChevronDownIcon } from "@radix-ui/react-icons";
 
 const signupSchema = z.object({
-  name: z.string().min(20, "Name must be at least 20 characters").max(60),
+  name: z.string()
+  .min(2, "Name must be at least 2 characters")
+  .max(60, "Name must be at most 60 characters"),
+
   email: z.string().email("Invalid email address"),
   password: z
     .string()
@@ -74,6 +77,7 @@ export default function Signup() {
             Create Your Account
           </h2>
 
+          {/* Name */}
           <FormField
             control={form.control}
             name="name"
@@ -93,6 +97,7 @@ export default function Signup() {
             )}
           />
 
+          {/* Email */}
           <FormField
             control={form.control}
             name="email"
@@ -113,6 +118,7 @@ export default function Signup() {
             )}
           />
 
+          {/* Password */}
           <FormField
             control={form.control}
             name="password"
@@ -133,6 +139,7 @@ export default function Signup() {
             )}
           />
 
+          {/* Address */}
           <FormField
             control={form.control}
             name="address"
@@ -152,6 +159,7 @@ export default function Signup() {
             )}
           />
 
+          {/* Role */}
           <FormField
             control={form.control}
             name="role"
@@ -165,39 +173,18 @@ export default function Signup() {
                     defaultValue={field.value}
                     aria-label="Select Role"
                   >
-                    <SelectTrigger
-                      className="
-                        flex items-center justify-between w-full rounded-md border border-gray-300 bg-white
-                        px-4 py-2 text-sm font-medium text-gray-700
-                        shadow-sm transition-colors
-                        focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600
-                        hover:border-indigo-400
-                      "
-                    >
-                      <SelectValue placeholder="Select a role" />
-                      <ChevronDownIcon className="w-5 h-5 text-gray-400" />
-                    </SelectTrigger>
+                   <SelectTrigger className="flex items-center justify-between w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 hover:border-indigo-400">
+  <SelectValue placeholder="Select a role" />
+</SelectTrigger>
 
-                    <SelectContent
-                      className="w-full rounded-md border border-gray-300 bg-white shadow-lg"
-                      position="popper"
-                    >
-                      <SelectItem
-                        value="user"
-                        className="cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 rounded-md"
-                      >
+                    <SelectContent className="w-full rounded-md border border-gray-300 bg-white shadow-lg" position="popper">
+                      <SelectItem value="user" className="cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 rounded-md">
                         Normal User
                       </SelectItem>
-                      <SelectItem
-                        value="owner"
-                        className="cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 rounded-md"
-                      >
+                      <SelectItem value="owner" className="cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 rounded-md">
                         Store Owner
                       </SelectItem>
-                      <SelectItem
-                        value="admin"
-                        className="cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 rounded-md"
-                      >
+                      <SelectItem value="admin" className="cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 rounded-md">
                         Admin
                       </SelectItem>
                     </SelectContent>
@@ -208,12 +195,24 @@ export default function Signup() {
             )}
           />
 
+          {/* Signup button */}
           <Button
             type="submit"
             className="w-full bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 text-white font-semibold py-3 rounded-md shadow-sm transition"
           >
             Sign Up
           </Button>
+
+          {/* Login redirect */}
+          <p className="text-center text-sm text-gray-600">
+            Already have an account?{" "}
+            <Link
+              to="/login"
+              className="font-semibold text-indigo-600 hover:text-indigo-700 transition"
+            >
+              Log in
+            </Link>
+          </p>
         </form>
       </Form>
     </div>

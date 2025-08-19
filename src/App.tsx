@@ -4,7 +4,6 @@ import Login from './pages/Login';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import OwnerDashboard from './pages/owner/OwnerDashboard';
 import UserDashboard from './pages/user/UserDashboard';
-import HomeRedirect from './pages/HomeRedirect';
 
 function App() {
   const token = localStorage.getItem('token');
@@ -16,17 +15,35 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomeRedirect />} />
+        {/* Root → Signup if not logged in, else redirect based on role */}
+        <Route
+          path="/"
+          element={
+            !isAuthenticated ? (
+              <Navigate to="/signup" replace />
+            ) : role === 'admin' ? (
+              <Navigate to="/admin/dashboard" replace />
+            ) : role === 'owner' ? (
+              <Navigate to="/owner/dashboard" replace />
+            ) : (
+              <Navigate to="/user/dashboard" replace />
+            )
+          }
+        />
 
+        {/* Signup */}
         <Route
           path="/signup"
           element={!isAuthenticated ? <Signup /> : <Navigate to="/" replace />}
         />
+
+        {/* Login */}
         <Route
           path="/login"
           element={!isAuthenticated ? <Login /> : <Navigate to="/" replace />}
         />
 
+        {/* Dashboards */}
         <Route
           path="/admin/dashboard"
           element={
@@ -58,6 +75,7 @@ function App() {
           }
         />
 
+        {/* Fallback 404 */}
         <Route
           path="*"
           element={<div className="p-8 text-center">404 - Page Not Found</div>}
