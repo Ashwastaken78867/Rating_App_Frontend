@@ -68,21 +68,21 @@ VITE_API_BASE_URL=https://backend-k9u7.com
 ```bash
 npm run dev
 ```
-
+---
 ### 📂 API Routes
-##Auth
-. POST /auth/register → Register user
-. POST /auth/login → Login user
-
+## Auth
+1 POST /auth/register → Register user.
+2 POST /auth/login → Login user.
+---
 ## Store
-. POST /store → Create new store (Owner only)
-. GET /store → Get all stores
-. GET /store/:id → Get store details
-
+1 POST /store → Create new store (Owner only)
+2 GET /store → Get all stores
+3 GET /store/:id → Get store details
+---
 ## Rating
-. POST /rating/:storeId → Add rating to store
-. GET /rating/:storeId → Get ratings of store
-
+1 POST /rating/:storeId → Add rating to store
+2 GET /rating/:storeId → Get ratings of store
+---
 ### 🗄️ Database Schema
 ```bash
 CREATE TABLE users (
