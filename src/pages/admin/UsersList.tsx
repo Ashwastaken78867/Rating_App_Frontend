@@ -15,7 +15,6 @@ type User = {
   email: string;
   address: string;
   role: string;
-  average_rating: number;
 };
 
 export default function UsersList() {
@@ -122,7 +121,6 @@ export default function UsersList() {
               <TableHead>Email</TableHead>
               <TableHead>Address</TableHead>
               <TableHead>Role</TableHead>
-              <TableHead>Rating (Store Owners)</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -132,11 +130,6 @@ export default function UsersList() {
                 <TableCell>{user.email}</TableCell>
                 <TableCell>{user.address}</TableCell>
                 <TableCell>{user.role}</TableCell>
-                <TableCell>
-                  {user.role === "owner"
-                    ? user.average_rating?.toFixed(2)
-                    : "-"}
-                </TableCell>
               </TableRow>
             ))}
           </TableBody>
