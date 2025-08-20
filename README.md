@@ -8,6 +8,7 @@ Built with **React, Node.js (Express), PostgreSQL, and Render** deployment.
 ## 🚀 Live Demo
 - **Frontend (React)**: [https://rating-app-frontend.onrender.com](https://rating-app-frontend.onrender.com)  
 - **Backend (Express + PostgreSQL)**: [https://rating-app-backend-k9u7.onrender.com](https://rating-app-backend-k9u7.onrender.com)
+-   Backend-Github-Repo:[https://github.com/Ashwastaken78867/Rating_App_Backend]
 
 ---
 
@@ -109,10 +110,26 @@ CREATE TABLE ratings (
   comment TEXT
 );
 ```
-### 👨‍💻 Author
-#Developed by Ash Bagda
+# Rating App
+
+## User View
+![User Screenshot](https://github.com/Ashwastaken78867/Rating_App_Frontend/blob/main/src/assets/ss1.png?raw=true)
+
+## Owner View
+![Owner Screenshot](https://github.com/Ashwastaken78867/Rating_App_Frontend/blob/main/src/assets/ss2.png?raw=true)
 
 ---
+
+## 👨‍💻 Author
+
+**Ash Bagda**  
+Full Stack Developer | MERN | NestJS | PostgreSQL | Docker  
+
+- GitHub: [@Ashwastaken78867](https://github.com/Ashwastaken78867)  
+- LinkedIn: [Ash Bagda](https://www.linkedin.com/in/ash-bagda/)  
+
+⭐ If you found this project helpful, consider giving it a star! ⭐
+
 
 
 
