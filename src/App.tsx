@@ -1,16 +1,27 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Signup from './pages/Signup';
-import Login from './pages/Login';
-import AdminDashboard from './pages/admin/AdminDashboard';
-import OwnerDashboard from './pages/owner/OwnerDashboard';
-import UserDashboard from './pages/user/UserDashboard';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import OwnerDashboard from "./pages/owner/OwnerDashboard";
+import UserDashboard from "./pages/user/UserDashboard";
 
 function App() {
-  const token = localStorage.getItem('token');
-  const role = localStorage.getItem('role');
+  const [token, setToken] = useState(localStorage.getItem("token"));
+  const [role, setRole] = useState(localStorage.getItem("role"));
 
-  const validRoles = ['admin', 'owner', 'user'];
+  const validRoles = ["admin", "owner", "user"];
   const isAuthenticated = Boolean(token) && role && validRoles.includes(role);
+
+  // keep state in sync with localStorage changes (like logout)
+  useEffect(() => {
+    const syncAuth = () => {
+      setToken(localStorage.getItem("token"));
+      setRole(localStorage.getItem("role"));
+    };
+    window.addEventListener("storage", syncAuth);
+    return () => window.removeEventListener("storage", syncAuth);
+  }, []);
 
   return (
     <BrowserRouter>
@@ -21,9 +32,9 @@ function App() {
           element={
             !isAuthenticated ? (
               <Navigate to="/signup" replace />
-            ) : role === 'admin' ? (
+            ) : role === "admin" ? (
               <Navigate to="/admin/dashboard" replace />
-            ) : role === 'owner' ? (
+            ) : role === "owner" ? (
               <Navigate to="/owner/dashboard" replace />
             ) : (
               <Navigate to="/user/dashboard" replace />
@@ -47,7 +58,7 @@ function App() {
         <Route
           path="/admin/dashboard"
           element={
-            isAuthenticated && role === 'admin' ? (
+            isAuthenticated && role === "admin" ? (
               <AdminDashboard />
             ) : (
               <Navigate to="/login" replace />
@@ -57,7 +68,7 @@ function App() {
         <Route
           path="/owner/dashboard"
           element={
-            isAuthenticated && role === 'owner' ? (
+            isAuthenticated && role === "owner" ? (
               <OwnerDashboard />
             ) : (
               <Navigate to="/login" replace />
@@ -67,7 +78,7 @@ function App() {
         <Route
           path="/user/dashboard"
           element={
-            isAuthenticated && role === 'user' ? (
+            isAuthenticated && role === "user" ? (
               <UserDashboard />
             ) : (
               <Navigate to="/login" replace />
