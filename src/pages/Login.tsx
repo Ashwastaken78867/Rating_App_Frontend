@@ -17,6 +17,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Link } from "react-router-dom";
 
 const loginSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -120,6 +121,17 @@ async function onSubmit(data: LoginFormData) {
           >
             Log In
           </Button>
+
+
+          <p className="text-center text-gray-600 text-sm">
+            Don’t have an account?{" "}
+            <Link
+              to="/signup"
+              className="font-semibold text-indigo-600 hover:text-indigo-700 transition"
+            >
+              Sign up
+            </Link>
+          </p>
         </form>
       </Form>
     </div>

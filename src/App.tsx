@@ -27,20 +27,21 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path="/"
-          element={
-            !isAuthenticated ? (
-              <Navigate to="/login" replace />
-            ) : role === "admin" ? (
-              <Navigate to="/admin/dashboard" replace />
-            ) : role === "owner" ? (
-              <Navigate to="/owner/dashboard" replace />
-            ) : (
-              <Navigate to="/user/dashboard" replace />
-            )
-          }
-        />
+       <Route
+  path="/"
+  element={
+    !isAuthenticated ? (
+      <Navigate to="/signup" replace />   // 👈 now goes to signup
+    ) : role === "admin" ? (
+      <Navigate to="/admin/dashboard" replace />
+    ) : role === "owner" ? (
+      <Navigate to="/owner/dashboard" replace />
+    ) : (
+      <Navigate to="/user/dashboard" replace />
+    )
+  }
+/>
+
 
         {/* Signup */}
         <Route
