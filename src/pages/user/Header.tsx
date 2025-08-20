@@ -8,13 +8,13 @@ import UpdatePasswordForm from "../user/UpdatePasswordForm";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
-export default function Header({ username }: { username: string }) {
+export default function Header({ }: { username: string }) {
   const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
 
   return (
     <header className="flex justify-between items-center mb-8 bg-white shadow px-6 py-4 rounded-lg">
       <h1 className="text-2xl font-bold text-gray-800">
-        Welcome, {username} 👋
+        Welcome👋
       </h1>
 
       {/* Profile Dropdown */}
