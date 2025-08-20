@@ -118,10 +118,19 @@ CREATE TABLE ratings (
 ## Owner View
 ![Owner Screenshot](https://github.com/Ashwastaken78867/Rating_App_Frontend/blob/main/src/assets/ss2.png?raw=true)
 
-### 👨‍💻 Author
-#Developed by Ash Bagda
-
 ---
+
+## 👨‍💻 Author
+
+**Ash Bagda**  
+Full Stack Developer | MERN | NestJS | PostgreSQL | Docker  
+
+- GitHub: [@Ashwastaken78867](https://github.com/Ashwastaken78867)  
+- LinkedIn: [Ash Bagda](https://www.linkedin.com/in/ash-bagda/)  
+- Portfolio: [Your Portfolio Link Here]  
+
+⭐ If you found this project helpful, consider giving it a star! ⭐
+
 
 
 
