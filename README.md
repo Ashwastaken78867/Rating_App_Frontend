@@ -109,6 +109,14 @@ CREATE TABLE ratings (
   comment TEXT
 );
 ```
+# Rating App
+
+## User View
+![User Screenshot](https://github.com/Ashwastaken78867/Rating_App_Frontend/blob/main/src/assets/ss1.png?raw=true)
+
+## Owner View
+![Owner Screenshot](https://github.com/Ashwastaken78867/Rating_App_Frontend/blob/main/src/assets/ss2.png?raw=true)
+
 ### 👨‍💻 Author
 #Developed by Ash Bagda
 
