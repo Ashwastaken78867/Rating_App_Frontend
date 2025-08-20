@@ -1,12 +1,11 @@
-// src/components/Admin/LogoutButton.tsx
 import { useNavigate } from "react-router-dom";
-
 export default function LogoutButton() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("role");
+    window.dispatchEvent(new Event("storage")); // force sync App state
     navigate("/login", { replace: true });
   };
 

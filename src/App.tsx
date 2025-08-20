@@ -13,12 +13,13 @@ function App() {
   const validRoles = ["admin", "owner", "user"];
   const isAuthenticated = Boolean(token) && role && validRoles.includes(role);
 
-  // keep state in sync with localStorage changes (like logout)
+  // Sync with localStorage when login/logout happens
   useEffect(() => {
     const syncAuth = () => {
       setToken(localStorage.getItem("token"));
       setRole(localStorage.getItem("role"));
     };
+
     window.addEventListener("storage", syncAuth);
     return () => window.removeEventListener("storage", syncAuth);
   }, []);
@@ -26,12 +27,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Root → Signup if not logged in, else redirect based on role */}
         <Route
           path="/"
           element={
             !isAuthenticated ? (
-              <Navigate to="/signup" replace />
+              <Navigate to="/login" replace />
             ) : role === "admin" ? (
               <Navigate to="/admin/dashboard" replace />
             ) : role === "owner" ? (

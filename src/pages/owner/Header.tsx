@@ -15,12 +15,12 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-export default function Header({ username }: { username: string }) {
+export default function Header({ }: { username: string }) {
   const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
 
   return (
     <header className="flex justify-between items-center mb-8 bg-white shadow px-6 py-4 rounded-lg">
-      <h1 className="text-2xl font-bold text-gray-800">Welcome, {username} 👋</h1>
+      <h1 className="text-2xl font-bold text-gray-800">Welcome 👋</h1>
 
       <DropdownMenu>
         <DropdownMenuTrigger className="focus:outline-none">
