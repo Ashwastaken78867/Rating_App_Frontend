@@ -71,17 +71,17 @@ npm run dev
 
 ### 📂 API Routes
 ##Auth
-POST /auth/register → Register user
-POST /auth/login → Login user
+. POST /auth/register → Register user
+. POST /auth/login → Login user
 
 ## Store
-POST /store → Create new store (Owner only)
-GET /store → Get all stores
-GET /store/:id → Get store details
+. POST /store → Create new store (Owner only)
+. GET /store → Get all stores
+. GET /store/:id → Get store details
 
 ## Rating
-POST /rating/:storeId → Add rating to store
-GET /rating/:storeId → Get ratings of store
+. POST /rating/:storeId → Add rating to store
+. GET /rating/:storeId → Get ratings of store
 
 ### 🗄️ Database Schema
 ```bash
@@ -110,10 +110,6 @@ CREATE TABLE ratings (
 #Developed by Ash Bagda
 
 ---
-
-👉 You just need to replace the **image URLs** with actual screenshots of your app. (I added placeholders from imgBB).  
-
-Do you want me to also **generate professional screenshots** (login, stores list, dashboard) for you so you can just upload and use?
 
 
 
