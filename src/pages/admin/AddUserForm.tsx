@@ -16,7 +16,7 @@ import * as Select from "@radix-ui/react-select";
 import { CheckIcon, ChevronDownIcon } from "@radix-ui/react-icons";
 
 const addUserSchema = z.object({
-  name: z.string().min(20).max(60),
+  name: z.string().min(2).max(60),
   email: z.string().email(),
   password: z
     .string()

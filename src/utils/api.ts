@@ -1,8 +1,10 @@
 import axios from 'axios';
 
-// Always use the deployed backend URL
+// Use environment variable if available, fallback to localhost for dev
 const api = axios.create({
-  baseURL: 'https://rating-app-backend-k9u7.onrender.com',
+  baseURL:  'http://localhost:5000',
+  // import.meta.env.VITE_API_BASE_URL
+  //  || 
   headers: { 'Content-Type': 'application/json' },
 });
 
