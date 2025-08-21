@@ -6,7 +6,7 @@ Built with **React, Node.js (Express), PostgreSQL, and Render** deployment.
 ---
 
 ## 🚀 Live Demo
-- **Frontend (React)**: [https://rating-app-frontend.onrender.com](https://rating-app-frontend.onrender.com)  
+- **Frontend (React)**: [https://rating-app-frontend.onrender.com](https://rating-app-frontend-4lcv.onrender.com)  
 - **Backend (Express + PostgreSQL)**: [https://rating-app-backend-k9u7.onrender.com](https://rating-app-backend-k9u7.onrender.com)
 -   Backend-Github-Repo:[https://github.com/Ashwastaken78867/Rating_App_Backend]
 
