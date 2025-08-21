@@ -34,7 +34,7 @@ Built with **React, Node.js (Express), PostgreSQL, and Render** deployment.
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/rating-app.git
+git clone https://github.com/Ashwastaken78867/Rating_App_Backend.git
 cd rating-app
 ```
 ### 2. Backend Setup
