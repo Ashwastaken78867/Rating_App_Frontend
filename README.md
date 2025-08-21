@@ -112,11 +112,11 @@ CREATE TABLE ratings (
 ```
 # Rating App
 
-## User View
-![User Screenshot](https://github.com/Ashwastaken78867/Rating_App_Frontend/blob/main/src/assets/ss1.png?raw=true)
+## Admin DashBoard
+![User Screenshot](https://github.com/Ashwastaken78867/Rating_App_Frontend/blob/main/src/assets/ss3.png?raw=true)
 
 ## Owner View
-![Owner Screenshot](https://github.com/Ashwastaken78867/Rating_App_Frontend/blob/main/src/assets/ss2.png?raw=true)
+![Owner Screenshot](https://github.com/Ashwastaken78867/Rating_App_Frontend/blob/main/src/assets/ss4.png?raw=true)
 
 ---
 
