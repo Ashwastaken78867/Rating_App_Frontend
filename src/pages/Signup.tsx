@@ -70,155 +70,182 @@ export default function Signup() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50 p-6">
-      <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="w-full max-w-md space-y-8 rounded-lg border border-gray-200 bg-white p-10 shadow-lg"
-          noValidate
-        >
-          <h2 className="text-center text-4xl font-extrabold text-gray-900 mb-6">
-            Create Your Account
-          </h2>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 flex items-center justify-center p-6">
+      <div className="w-full max-w-lg">
+        {/* Logo/Brand Section */}
+        <div className="text-center mb-8">
+          <div className="w-16 h-16 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+            </svg>
+          </div>
+          <h1 className="text-2xl font-bold text-gray-900">Create Your Account</h1>
+          <p className="text-gray-600 mt-2">Join our platform and get started today</p>
+        </div>
 
-          {/* Name */}
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem className="space-y-1">
-                <FormLabel className="text-gray-700 font-medium">Full Name</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="Enter your full name"
-                    {...field}
-                    className="border-gray-300 focus:ring-indigo-600 focus:border-indigo-600"
-                    autoComplete="name"
-                  />
-                </FormControl>
-                <FormMessage className="text-sm text-red-600" />
-              </FormItem>
-            )}
-          />
-
-          {/* Email */}
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem className="space-y-1">
-                <FormLabel className="text-gray-700 font-medium">Email Address</FormLabel>
-                <FormControl>
-                  <Input
-                    type="email"
-                    placeholder="you@example.com"
-                    {...field}
-                    className="border-gray-300 focus:ring-indigo-600 focus:border-indigo-600"
-                    autoComplete="email"
-                  />
-                </FormControl>
-                <FormMessage className="text-sm text-red-600" />
-              </FormItem>
-            )}
-          />
-
-          {/* Password */}
-          <FormField
-            control={form.control}
-            name="password"
-            render={({ field }) => (
-              <FormItem className="space-y-1">
-                <FormLabel className="text-gray-700 font-medium">Password</FormLabel>
-                <FormControl>
-                  <Input
-                    type="password"
-                    placeholder="Create a strong password"
-                    {...field}
-                    className="border-gray-300 focus:ring-indigo-600 focus:border-indigo-600"
-                    autoComplete="new-password"
-                  />
-                </FormControl>
-                <FormMessage className="text-sm text-red-600" />
-              </FormItem>
-            )}
-          />
-
-          {/* Address */}
-          <FormField
-            control={form.control}
-            name="address"
-            render={({ field }) => (
-              <FormItem className="space-y-1">
-                <FormLabel className="text-gray-700 font-medium">Address</FormLabel>
-                <FormControl>
-                  <Textarea
-                    placeholder="Your address"
-                    {...field}
-                    rows={3}
-                    className="border-gray-300 focus:ring-indigo-600 focus:border-indigo-600 resize-none"
-                  />
-                </FormControl>
-                <FormMessage className="text-sm text-red-600" />
-              </FormItem>
-            )}
-          />
-
-          {/* Role */}
-          <FormField
-            control={form.control}
-            name="role"
-            render={({ field }) => (
-              <FormItem className="space-y-1">
-                <FormLabel className="text-gray-700 font-medium">Role</FormLabel>
-                <FormControl>
-                  <Select
-                    onValueChange={field.onChange}
-                    value={field.value}
-                    defaultValue={field.value}
-                    aria-label="Select Role"
-                  >
-                   <SelectTrigger className="flex items-center justify-between w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 hover:border-indigo-400">
-  <SelectValue placeholder="Select a role" />
-</SelectTrigger>
-
-                    <SelectContent className="w-full rounded-md border border-gray-300 bg-white shadow-lg" position="popper">
-                      <SelectItem value="user" className="cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 rounded-md">
-                        Normal User
-                      </SelectItem>
-                      <SelectItem value="owner" className="cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 rounded-md">
-                        Store Owner
-                      </SelectItem>
-                      <SelectItem value="admin" className="cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 rounded-md">
-                        Admin
-                      </SelectItem>
-                    </SelectContent>
-                  </Select>
-                </FormControl>
-                <FormMessage className="text-sm text-red-600" />
-              </FormItem>
-            )}
-          />
-
-          {/* Signup button */}
-          <Button
-            type="submit"
-            className="w-full bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 text-white font-semibold py-3 rounded-md shadow-sm transition"
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="w-full space-y-6 rounded-2xl border border-gray-200/50 bg-white/80 backdrop-blur-sm p-8 shadow-2xl shadow-gray-900/10"
+            noValidate
           >
-            Sign Up
-          </Button>
+            {/* Name */}
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem className="space-y-2">
+                  <FormLabel className="text-gray-700 font-semibold text-sm">Full Name</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Enter your full name"
+                      {...field}
+                      className="h-12 border-gray-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent rounded-xl transition-all duration-200 bg-gray-50/50 hover:bg-gray-50"
+                      autoComplete="name"
+                    />
+                  </FormControl>
+                  <FormMessage className="text-sm text-red-500 font-medium" />
+                </FormItem>
+              )}
+            />
 
-          {/* Login redirect */}
-          <p className="text-center text-sm text-gray-600">
-            Already have an account?{" "}
-            <Link
-              to="/login"
-              className="font-semibold text-indigo-600 hover:text-indigo-700 transition"
+            {/* Email */}
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem className="space-y-2">
+                  <FormLabel className="text-gray-700 font-semibold text-sm">Email Address</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="email"
+                      placeholder="Enter your email address"
+                      {...field}
+                      className="h-12 border-gray-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent rounded-xl transition-all duration-200 bg-gray-50/50 hover:bg-gray-50"
+                      autoComplete="email"
+                    />
+                  </FormControl>
+                  <FormMessage className="text-sm text-red-500 font-medium" />
+                </FormItem>
+              )}
+            />
+
+            {/* Password */}
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem className="space-y-2">
+                  <FormLabel className="text-gray-700 font-semibold text-sm">Password</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="password"
+                      placeholder="Create a strong password"
+                      {...field}
+                      className="h-12 border-gray-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent rounded-xl transition-all duration-200 bg-gray-50/50 hover:bg-gray-50"
+                      autoComplete="new-password"
+                    />
+                  </FormControl>
+                  <FormMessage className="text-sm text-red-500 font-medium" />
+                </FormItem>
+              )}
+            />
+
+            {/* Address */}
+            <FormField
+              control={form.control}
+              name="address"
+              render={({ field }) => (
+                <FormItem className="space-y-2">
+                  <FormLabel className="text-gray-700 font-semibold text-sm">Address</FormLabel>
+                  <FormControl>
+                    <Textarea
+                      placeholder="Enter your address"
+                      {...field}
+                      rows={3}
+                      className="border-gray-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent rounded-xl transition-all duration-200 bg-gray-50/50 hover:bg-gray-50 resize-none min-h-[80px]"
+                    />
+                  </FormControl>
+                  <FormMessage className="text-sm text-red-500 font-medium" />
+                </FormItem>
+              )}
+            />
+
+            {/* Role */}
+            <FormField
+              control={form.control}
+              name="role"
+              render={({ field }) => (
+                <FormItem className="space-y-2">
+                  <FormLabel className="text-gray-700 font-semibold text-sm">Role</FormLabel>
+                  <FormControl>
+                    <Select
+                      onValueChange={field.onChange}
+                      value={field.value}
+                      defaultValue={field.value}
+                      aria-label="Select Role"
+                    >
+                     <SelectTrigger className="h-12 border-gray-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent rounded-xl transition-all duration-200 bg-gray-50/50 hover:bg-gray-50">
+                      <SelectValue placeholder="Select a role" />
+                    </SelectTrigger>
+
+                      <SelectContent className="w-full rounded-xl border border-gray-200 bg-white shadow-xl" position="popper">
+                        <SelectItem value="user" className="cursor-pointer px-4 py-3 text-sm text-gray-700 hover:bg-indigo-50 rounded-lg transition-colors">
+                          <div className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span>Normal User</span>
+                          </div>
+                        </SelectItem>
+                        <SelectItem value="owner" className="cursor-pointer px-4 py-3 text-sm text-gray-700 hover:bg-indigo-50 rounded-lg transition-colors">
+                          <div className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span>Store Owner</span>
+                          </div>
+                        </SelectItem>
+                        <SelectItem value="admin" className="cursor-pointer px-4 py-3 text-sm text-gray-700 hover:bg-indigo-50 rounded-lg transition-colors">
+                          <div className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <span>Admin</span>
+                          </div>
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </FormControl>
+                  <FormMessage className="text-sm text-red-500 font-medium" />
+                </FormItem>
+              )}
+            />
+
+            {/* Signup button */}
+            <Button
+              type="submit"
+              className="w-full h-12 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-semibold rounded-xl shadow-lg shadow-indigo-500/25 transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
             >
-              Log in
-            </Link>
-          </p>
-        </form>
-      </Form>
+              Create Account
+            </Button>
+
+            <div className="relative my-6">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-gray-200"></div>
+              </div>
+              <div className="relative flex justify-center text-sm">
+                <span className="px-2 bg-white text-gray-500">Already have an account?</span>
+              </div>
+            </div>
+
+            {/* Login redirect */}
+            <p className="text-center text-sm text-gray-600">
+              Already have an account?{" "}
+              <Link
+                to="/login"
+                className="font-semibold text-indigo-600 hover:text-indigo-700 transition-colors duration-200 underline decoration-2 underline-offset-2"
+              >
+                Sign in
+              </Link>
+            </p>
+          </form>
+        </Form>
+      </div>
     </div>
   );
 }
